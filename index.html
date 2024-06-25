@@ -87,39 +87,35 @@
 
         <div class="form__group form__group-radio">
           <p class="form__label form__label-query">
-            Query Type<span class="asterix">*</span>
+            Query Type<span class="asterisk">*</span>
           </p>
           <div class="form__radio-group">
-            <div class="form__radio-item">
+            <label class="form__radio-item" for="general-enquiry">
               <input
                 type="radio"
+                class="form__radio"
                 name="query-type"
                 id="general-enquiry"
                 value="general"
                 aria-describedby="query-type-error"
                 required
               />
-              <label
-                class="form__label form__label__radio"
-                for="general-enquiry"
-                >General Enquiry</label
-              >
-            </div>
-            <div class="form__radio-item">
+              <span class="form__custom-radio"></span>
+              <span class="form__label-radio">General Enquiry</span>
+            </label>
+            <label class="form__radio-item" for="support-request">
               <input
                 type="radio"
+                class="form__radio"
                 name="query-type"
                 id="support-request"
                 value="support"
                 aria-describedby="query-type-error"
                 required
               />
-              <label
-                class="form__label form__label__radio"
-                for="support-request"
-                >Support Request</label
-              >
-            </div>
+              <span class="form__custom-radio"></span>
+              <span class="form__label-radio">Support Request</span>
+            </label>
           </div>
           <span
             class="form__error"
@@ -148,23 +144,27 @@
 
         <div class="form__group form__group-checkbox">
           <div class="form__checkbox-item">
-            <input
-              class="form__checkbox"
-              type="checkbox"
-              name="consent"
-              id="consent"
-              aria-describedby="consent-error"
-              required
-            />
-            <label class="form__label form__label-checkbox" for="consent"
-              >I consent to being contacted by the team<span class="asterix"
-                >*</span
-              ></label
-            >
+            <label class="form__checkbox-item" for="consent">
+              <input
+                class="form__checkbox"
+                type="checkbox"
+                name="consent"
+                id="consent"
+                aria-describedby="consent-error"
+                required
+              />
+              <span class="form__custom-checkbox"></span>
+              <span class="form__label form__label-checkbox">
+                I consent to being contacted by the team *
+              </span>
+            </label>
+            <!-- <span class="asterisk">*</span> -->
           </div>
-
-          <span class="form__error" aria-live="polite" id="consent-error">
-          </span>
+          <span
+            class="form__error"
+            aria-live="polite"
+            id="consent-error"
+          ></span>
         </div>
 
         <button class="form__button" type="submit">Submit</button>
