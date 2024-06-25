@@ -1,0 +1,340 @@
+:root {
+  --LightGreen: hsl(148, 38%, 91%);
+  --Green: hsl(169, 82%, 27%);
+  --Red: hsl(0, 66%, 56%);
+  --White: hsl(0, 0%, 100%);
+  --MediumGrey: hsl(186, 15%, 59%);
+  --DarkGrey: hsl(187, 24%, 22%);
+}
+
+/* Box sizing rules */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+/* Prevent font size inflation */
+html {
+  -moz-text-size-adjust: none;
+  -webkit-text-size-adjust: none;
+  text-size-adjust: none;
+  box-sizing: border-box;
+}
+
+/* Smooth scroll */
+@media (prefers-reduced-motion: no-preference) {
+  html {
+    scroll-behavior: smooth;
+  }
+}
+
+/* Remove default margin in favour of better control in authored CSS */
+body,
+h1,
+h2,
+h3,
+h4,
+p,
+figure,
+blockquote,
+dl,
+dd {
+  margin-block-end: 0;
+}
+
+/* Remove list styles on ul, ol elements with a list role, which suggests default styling will be removed */
+ul[role="list"],
+ol[role="list"] {
+  list-style: none;
+}
+
+/* Set core body defaults */
+body {
+  min-height: 100vh;
+  line-height: 1.5;
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+  border: 0;
+}
+
+* {
+  margin: 0;
+}
+
+/* Set shorter line heights on headings and interactive elements */
+h1,
+h2,
+h3,
+h4,
+button,
+input,
+label {
+  line-height: 1.1;
+}
+
+/* Balance text wrapping on headings */
+h1,
+h2,
+h3,
+h4 {
+  text-wrap: balance;
+}
+
+/* A elements that don't have a class get default styles */
+a:not([class]) {
+  text-decoration-skip-ink: auto;
+  color: currentColor;
+}
+
+/* Make images easier to work with */
+img,
+picture {
+  max-width: 100%;
+  display: block;
+}
+
+/* Inherit fonts for inputs and buttons */
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+
+/* Make sure textareas without a rows attribute are not tiny */
+/* textarea:not([rows]) {
+  min-height: 10em;
+} */
+
+/* Anything that has been anchored to should have extra scroll margin */
+:target {
+  scroll-margin-block: 5ex;
+}
+
+body {
+  background-color: var(--LightGreen);
+  font-family: "Karla", sans-serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 2rem 1rem;
+}
+
+.main {
+  width: 100%;
+  max-width: 46rem;
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  padding: 1.5rem;
+  background: var(--White);
+  border-radius: 1rem;
+}
+
+.form__title {
+  font-weight: 700;
+  font-size: 2rem;
+  line-height: 100%;
+  letter-spacing: -1px;
+  color: var(--DarkGrey);
+  margin-bottom: 2rem;
+}
+
+.form__label {
+  font-weight: 400;
+  font-size: 1rem;
+  line-height: 150%;
+  color: var(--DarkGrey);
+  display: flex;
+  gap: 0.5rem;
+  margin-bottom: 0.5rem;
+}
+
+.asterix {
+  color: var(--Green);
+}
+
+.form__label__radio {
+  font-size: 1.125rem;
+}
+
+.form__label-checkbox,
+.form__label__radio {
+  margin-bottom: 0;
+}
+
+.form__label-query {
+  margin-bottom: 1rem;
+}
+
+.form__row,
+.form__group,
+.form__radio-group {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
+.form__radio-item {
+  width: 100%;
+}
+
+.form__radio-group {
+  gap: 1rem;
+}
+
+.form__group {
+  margin-bottom: 1.5rem;
+}
+
+.form__group-radio {
+  display: flex;
+}
+
+.form__radio-item {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.form__button {
+  width: 100%;
+  font-weight: 700;
+  font-size: 1.125rem;
+  line-height: 150%;
+  color: var(--White);
+  border: transparent;
+  border-radius: 0.5rem;
+  background: var(--Green);
+  margin-block-start: 1rem;
+  padding: 1em;
+  cursor: pointer;
+  overflow: hidden;
+  transition: color 0.1s ease-in-out;
+  position: relative;
+  z-index: 1;
+}
+
+.form__button:before,
+.form__button:after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+  transition: opacity 0.3s ease-in-out;
+}
+
+.form__button:before {
+  background: var(--Green);
+  opacity: 1;
+}
+
+.form__button:after {
+  background: linear-gradient(0deg, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+    #0c7d69;
+  opacity: 0;
+}
+
+.form__button:hover:before {
+  opacity: 0;
+}
+
+.form__button:hover:after {
+  opacity: 1;
+}
+
+.form__button:focus-visible {
+  outline: 2px solid var(--Green);
+  outline-offset: 2px;
+}
+
+.form__input,
+.form__textarea,
+.form__radio-item {
+  border: 1px solid var(--MediumGrey);
+  border-radius: 0.5rem;
+  transition: all 0.3s ease-in-out;
+}
+
+.form__input,
+.form__textarea,
+.form__radio-item {
+  padding: 0.75rem 1.5rem;
+}
+
+.form__input:hover,
+.form__textarea:hover,
+.form__radio-item:hover {
+  cursor: pointer;
+  border: 1px solid var(--Green);
+}
+
+.form__input:focus-visible,
+.form__textarea:focus-visible {
+  outline: 2px solid var(--Green);
+  border: transparent;
+}
+
+.form__radio-item:active,
+.form__radio-item:hover {
+  background: var(--LightGreen);
+}
+
+.form__radio-item:hover > .form__label__radio {
+  color: var(--Green);
+}
+
+.form__textarea {
+  resize: none;
+  min-height: 15rem;
+}
+
+.form__group-checkbox {
+  margin-block-start: 1rem;
+}
+
+.form__checkbox-item {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.form__error {
+  font-weight: 400;
+  font-size: 1rem;
+  line-height: 150%;
+  color: var(--Red);
+  margin-top: 0.5rem;
+}
+
+@media screen and (min-width: 26.625rem) {
+  .form__textarea {
+    min-height: 105px;
+  }
+}
+
+@media screen and (min-width: 37.5rem) {
+  .form {
+    padding: 2.5rem;
+  }
+
+  .form__row {
+    gap: 1rem;
+  }
+
+  .form__row,
+  .form__radio-group {
+    flex-direction: row;
+  }
+}
