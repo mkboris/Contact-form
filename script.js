@@ -11,5 +11,3 @@ for (const error of errorMessage) {
 // Please enter a valid email address
 // Please select a query type
 // To submit this form, please consent to being contacted
-// Message Sent!
-// Thanks for completing the form. We'll be in touch soon!

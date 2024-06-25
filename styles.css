@@ -122,7 +122,40 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
+  flex-direction: column;
   padding: 2rem 1rem;
+}
+
+.success {
+  background: var(--DarkGrey);
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  padding: 1.5rem;
+  gap: 0.5rem;
+  border-radius: 0.75rem;
+  width: 100%;
+  max-width: 28.125rem;
+  visibility: hidden;
+}
+
+.success__icon-container {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.success__text {
+  font-weight: 700;
+  font-size: 1.125rem;
+  line-height: 150%;
+  color: var(--White);
+}
+
+.success__confirmation {
+  font-weight: 400;
+  font-size: 1rem;
+  line-height: 150%;
+  color: var(--LightGreen);
 }
 
 .main {
@@ -415,6 +448,10 @@ body {
 }
 
 @media screen and (min-width: 37.5rem) {
+  /* body {
+    padding: 8rem 1rem;
+  } */
+
   .form {
     padding: 2.5rem;
   }
