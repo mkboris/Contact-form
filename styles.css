@@ -136,7 +136,7 @@ body {
   border-radius: 0.75rem;
   width: 100%;
   max-width: 28.125rem;
-  visibility: hidden;
+  display: none;
 }
 
 .success__icon-container {
@@ -438,7 +438,6 @@ body {
   font-size: 1rem;
   line-height: 150%;
   color: var(--Red);
-  margin-top: 0.5rem;
 }
 
 @media screen and (min-width: 26.625rem) {
