@@ -71,6 +71,9 @@ const clearError = (e) => {
 const showSuccess = () => {
   const successMessage = document.querySelector(".success");
   successMessage.style.display = "block";
+  successMessage.setAttribute("aria-hidden", "false");
+  successMessage.scrollIntoView({ behavior: "smooth" });
+  successMessage.focus();
 };
 
 form.addEventListener("submit", handleSubmit);
