@@ -361,15 +361,6 @@ body {
   border: transparent;
 }
 
-.form__radio-item:active,
-.form__radio-item:hover {
-  background: var(--LightGreen);
-}
-
-.form__radio-item:hover > .form__label__radio {
-  color: var(--Green);
-}
-
 .form__textarea {
   resize: none;
   min-height: 15rem;
