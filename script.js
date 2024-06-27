@@ -68,30 +68,9 @@ const clearError = (e) => {
   e.target.style.borderColor = "";
 };
 
-const clearRadioErrors = () => {
-  radioBtns.forEach((radio) => {
-    const group = radio.closest(".form__group");
-    const errorMessage = group.querySelector(".form__error");
-    errorMessage.textContent = "";
-    errorMessage.style.display = "none";
-    errorMessage.style.marginTop = "0";
-    radio.style.borderColor = "";
-  });
-};
-
-const clearCheckboxError = () => {
-  const group = checkbox.closest(".form__group");
-  const errorMessage = group.querySelector(".form__error");
-  errorMessage.textContent = "";
-  errorMessage.style.display = "none";
-  errorMessage.style.marginTop = "0";
-  checkbox.style.borderColor = "";
-};
-
 const showSuccess = () => {
   const successMessage = document.querySelector(".success");
   successMessage.style.display = "block";
-  successMessage.setAttribute("aria-hidden", "false");
 };
 
 form.addEventListener("submit", handleSubmit);
@@ -107,9 +86,3 @@ formGroups.forEach((group) => {
     textarea.addEventListener("focus", clearError);
   }
 });
-
-radioBtns.forEach((radio) => {
-  radio.addEventListener("focus", clearRadioErrors);
-});
-
-checkbox.addEventListener("focus", clearCheckboxError);
