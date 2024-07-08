@@ -224,13 +224,12 @@ body {
   gap: 1rem;
 }
 
-.form__group {
-  margin-bottom: 1.5rem;
+.form__radio-group-wrap {
+  width: 100%;
 }
 
-.form__radio-group {
-  display: flex;
-  flex-direction: column;
+.form__group {
+  margin-bottom: 1.5rem;
 }
 
 .form__radio-item {
@@ -438,10 +437,6 @@ body {
 }
 
 @media screen and (min-width: 37.5rem) {
-  /* body {
-    padding: 8rem 1rem;
-  } */
-
   .form {
     padding: 2.5rem;
   }

@@ -114,32 +114,36 @@
             Query Type<span class="asterisk">*</span>
           </p>
           <div class="form__radio-group">
-            <label class="form__radio-item" for="general-enquiry">
-              <input
-                type="radio"
-                class="form__radio"
-                name="query-type"
-                id="general-enquiry"
-                value="general"
-                aria-describedby="query-type-error"
-                required
-              />
-              <span class="form__custom-radio"></span>
-              <span class="form__label-radio">General Enquiry</span>
-            </label>
-            <label class="form__radio-item" for="support-request">
-              <input
-                type="radio"
-                class="form__radio"
-                name="query-type"
-                id="support-request"
-                value="support"
-                aria-describedby="query-type-error"
-                required
-              />
-              <span class="form__custom-radio"></span>
-              <span class="form__label-radio">Support Request</span>
-            </label>
+            <div class="form__radio-group-wrap">
+              <label class="form__radio-item" for="general-enquiry">
+                <input
+                  type="radio"
+                  class="form__radio"
+                  name="query-type"
+                  id="general-enquiry"
+                  value="general"
+                  aria-describedby="query-type-error"
+                  required
+                />
+                <span class="form__custom-radio"></span>
+                <span class="form__label-radio">General Enquiry</span>
+              </label>
+            </div>
+            <div class="form__radio-group-wrap">
+              <label class="form__radio-item" for="support-request">
+                <input
+                  type="radio"
+                  class="form__radio"
+                  name="query-type"
+                  id="support-request"
+                  value="support"
+                  aria-describedby="query-type-error"
+                  required
+                />
+                <span class="form__custom-radio"></span>
+                <span class="form__label-radio">Support Request</span>
+              </label>
+            </div>
           </div>
           <span
             class="form__error"
