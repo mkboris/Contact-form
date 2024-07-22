@@ -63,27 +63,6 @@ const showError = (errorMessage, message, field) => {
   field.style.borderColor = "hsl(0, 66%, 56%)";
 };
 
-// const clearError = (e) => {
-//   const group = e.target.closest(".form__group");
-//   const errorMessage = group.querySelector(".form__error");
-//   errorMessage.textContent = "";
-//   errorMessage.style.display = "none";
-//   errorMessage.style.marginTop = "0";
-//   e.target.style.borderColor = "";
-// };
-
-// formGroups.forEach((group) => {
-//   const input = group.querySelector("input");
-//   const textarea = group.querySelector("textarea");
-
-//   if (input) {
-//     input.addEventListener("focus", clearError);
-//   }
-//   if (textarea) {
-//     textarea.addEventListener("focus", clearError);
-//   }
-// });
-
 const clearError = (e) => {
   const group = e.target.closest(
     ".form__group, .form__group-radio, .form__group-checkbox"
