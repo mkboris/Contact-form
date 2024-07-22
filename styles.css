@@ -374,10 +374,14 @@ body {
   margin-block-start: 1rem;
 }
 
+.form__label-checkbox {
+  text-wrap: pretty;
+}
+
 .form__checkbox-item {
   display: flex;
   align-items: center;
-  gap: 1rem;
+  gap: 0.8rem;
 }
 
 .form__checkbox {
@@ -453,5 +457,9 @@ body {
   .form__row,
   .form__radio-group {
     flex-direction: row;
+  }
+
+  .form__checkbox-item {
+    gap: 1rem;
   }
 }
