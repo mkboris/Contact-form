@@ -5,7 +5,9 @@ const emailField = document.getElementById("email");
 const textareaField = document.querySelector(".form__textarea");
 const radioBtns = document.querySelectorAll(".form__radio");
 const checkbox = document.querySelector(".form__checkbox");
-const formGroups = document.querySelectorAll(".form__group");
+const formGroups = document.querySelectorAll(
+  ".form__group, .form__group-radio, .form__group-checkbox"
+);
 
 const handleSubmit = (e) => {
   e.preventDefault();
@@ -52,6 +54,8 @@ const handleSubmit = (e) => {
   }
 };
 
+form.addEventListener("submit", handleSubmit);
+
 const showError = (errorMessage, message, field) => {
   errorMessage.textContent = message;
   errorMessage.style.display = "block";
@@ -59,14 +63,54 @@ const showError = (errorMessage, message, field) => {
   field.style.borderColor = "hsl(0, 66%, 56%)";
 };
 
+// const clearError = (e) => {
+//   const group = e.target.closest(".form__group");
+//   const errorMessage = group.querySelector(".form__error");
+//   errorMessage.textContent = "";
+//   errorMessage.style.display = "none";
+//   errorMessage.style.marginTop = "0";
+//   e.target.style.borderColor = "";
+// };
+
+// formGroups.forEach((group) => {
+//   const input = group.querySelector("input");
+//   const textarea = group.querySelector("textarea");
+
+//   if (input) {
+//     input.addEventListener("focus", clearError);
+//   }
+//   if (textarea) {
+//     textarea.addEventListener("focus", clearError);
+//   }
+// });
+
 const clearError = (e) => {
-  const group = e.target.closest(".form__group");
+  const group = e.target.closest(
+    ".form__group, .form__group-radio, .form__group-checkbox"
+  );
+  if (!group) return;
+
   const errorMessage = group.querySelector(".form__error");
-  errorMessage.textContent = "";
-  errorMessage.style.display = "none";
-  errorMessage.style.marginTop = "0";
+  if (errorMessage) {
+    errorMessage.textContent = "";
+    errorMessage.style.display = "none";
+    errorMessage.style.marginTop = "0";
+  }
+
   e.target.style.borderColor = "";
 };
+
+formGroups.forEach((group) => {
+  const inputs = group.querySelectorAll("input, textarea");
+
+  inputs.forEach((input) => {
+    input.addEventListener("focus", clearError);
+
+    if (input.type === "radio" || input.type === "checkbox") {
+      input.addEventListener("change", clearError);
+    }
+  });
+});
 
 const showSuccess = () => {
   const successMessage = document.querySelector(".success");
@@ -75,20 +119,6 @@ const showSuccess = () => {
   successMessage.scrollIntoView({ behavior: "smooth" });
   successMessage.focus();
 };
-
-form.addEventListener("submit", handleSubmit);
-
-formGroups.forEach((group) => {
-  const input = group.querySelector("input");
-  const textarea = group.querySelector("textarea");
-
-  if (input) {
-    input.addEventListener("focus", clearError);
-  }
-  if (textarea) {
-    textarea.addEventListener("focus", clearError);
-  }
-});
 
 const radioGroups = document.querySelectorAll(".form__radio-group-wrap");
 

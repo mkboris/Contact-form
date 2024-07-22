@@ -224,6 +224,11 @@ body {
   gap: 1rem;
 }
 
+.form__group-radio {
+  padding: 0;
+  border: transparent;
+}
+
 .form__radio-group-wrap {
   width: 100%;
 }
